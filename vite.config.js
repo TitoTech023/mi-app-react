@@ -5,9 +5,14 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: '0.0.0.0',
-    allowedHosts: [
-      'stonewall-luster-passport.ngrok-free.dev',
-      '*.ngrok-free.dev'  // Permite cualquier subdominio de ngrok
-    ]
+    allowedHosts: ['*']
+  },
+  build: {
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: 'index.html'
+      }
+    }
   }
 })
