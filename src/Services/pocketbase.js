@@ -1,6 +1,6 @@
 import PocketBase from 'pocketbase';
 
-// Conectar a PocketBase (asegúrate que esté corriendo en el puerto 8090)
+// Conectar a PocketBase (cambia la URL cuando tengas el backend desplegado)
 const pb = new PocketBase('http://127.0.0.1:8090');
 
 // Obtener todos los aliados
@@ -35,17 +35,6 @@ export const deleteAliado = async (id) => {
   } catch (error) {
     console.error('Error al eliminar aliado:', error);
     throw error;
-  }
-};
-
-// Probar conexión
-export const testConnection = async () => {
-  try {
-    await pb.health.check();
-    return true;
-  } catch (error) {
-    console.error('Error de conexión:', error);
-    return false;
   }
 };
 
