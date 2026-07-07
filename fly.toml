@@ -1,0 +1,18 @@
+app = "mi-app-react-pb"
+primary_region = "iad"
+
+[build]
+  image = "flyio/pocketbase:latest"
+
+[http_service]
+  internal_port = 8090
+  force_https = true
+
+[[vm]]
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1
+
+[[mounts]]
+  source = "pb_data"
+  destination = "/pb_data"
