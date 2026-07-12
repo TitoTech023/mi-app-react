@@ -10,7 +10,8 @@ let isAuthenticated = false;
 const ensureAuth = async () => {
   try {
     if (!isAuthenticated) {
-      await pb.admins.authWithPassword(ADMIN_EMAIL, ADMIN_PASSWORD);
+      // ⚠️ AQUÍ SE HIZO EL CAMBIO: Se actualizó de 'pb.admins' a 'pb.collection("_superusers")'
+      await pb.collection('_superusers').authWithPassword(ADMIN_EMAIL, ADMIN_PASSWORD);
       isAuthenticated = true;
       console.log('✅ Autenticado correctamente');
     }
@@ -48,7 +49,7 @@ export const createAliado = async (data) => {
 export const deleteAliado = async (id) => {
   try {
     await ensureAuth();
-    await pb.collection('aliados').delete(id);
+    const record = await pb.collection('aliados').delete(id);
     return true;
   } catch (error) {
     console.error('Error al eliminar aliado:', error);
