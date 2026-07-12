@@ -1,7 +1,7 @@
 import PocketBase from 'pocketbase';
 
 // Conectar a PocketBase (cambia la URL cuando tengas el backend desplegado)
-const pb = new PocketBase('http://127.0.0.1:8090');
+const pb = new PocketBase('https://mi-app-react-pb-production.up.railway.app');
 
 // Obtener todos los aliados
 export const getAliados = async () => {
