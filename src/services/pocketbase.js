@@ -1,8 +1,7 @@
-iimport PocketBase from 'pocketbase';
+import PocketBase from 'pocketbase';
 
 const pb = new PocketBase('https://mi-app-react-pb-production.up.railway.app');
 
-// Autenticación con el admin
 const ADMIN_EMAIL = 'admin@admin.com';
 const ADMIN_PASSWORD = '123456789';
 
@@ -22,7 +21,6 @@ const ensureAuth = async () => {
   }
 };
 
-// Obtener todos los aliados
 export const getAliados = async () => {
   try {
     await ensureAuth();
@@ -36,7 +34,6 @@ export const getAliados = async () => {
   }
 };
 
-// Crear un nuevo aliado
 export const createAliado = async (data) => {
   try {
     await ensureAuth();
@@ -48,7 +45,6 @@ export const createAliado = async (data) => {
   }
 };
 
-// Eliminar un aliado
 export const deleteAliado = async (id) => {
   try {
     await ensureAuth();
