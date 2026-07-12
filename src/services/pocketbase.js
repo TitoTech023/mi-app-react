@@ -2,8 +2,8 @@ import PocketBase from 'pocketbase';
 
 const pb = new PocketBase('https://mi-app-react-pb-production.up.railway.app');
 
-const ADMIN_EMAIL = 'test@example.com';
-const ADMIN_PASSWORD = '1234567890';
+const ADMIN_EMAIL = 'admin@ejemplo.com';
+const ADMIN_PASSWORD = 'Uoex1677t34dz';
 
 let isAuthenticated = false;
 
